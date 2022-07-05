@@ -26,7 +26,7 @@ app.get('/', (_req, res) => {
   res.status(StatusCodes.OK).send('API funcionando!')
 });
 
-app.get('/login', User.findUser)
+app.post('/login', User.findUser)
 
 app.get('/movies', Movie.getAllMovies)
 
