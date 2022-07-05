@@ -1,0 +1,17 @@
+{
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2016",                                 
+    "module": "commonjs",
+    "rootDir": "./src", // o diretorio onde contém o index do projeto
+    "outDir": "./dist",
+    "preserveConstEnums": true,
+    "esModuleInterop": true, // autoria o uso de " import x from x"
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include":["./src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
