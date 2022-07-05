@@ -20,6 +20,7 @@ model User {
   password String
   movies   MovieRental[]
   games    GameRental[]
+
   @@map("users")
 }
 
@@ -30,17 +31,19 @@ model Movie {
   resume  String
   release Int
   user    MovieRental[]
+
   @@map("movies")
 }
 
 model MovieRental {
+  id         Int      @id @default(autoincrement())
   movie      Movie    @relation(fields: [movieId], references: [id])
   movieId    Int
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
-  rentalDate DateTime @default(now())
-  returnDate DateTime
-  @@id([movieId, userId])
+  rentalDate DateTime @default(now()) @db.Date
+  returnDate DateTime @db.Date
+
   @@map("movie_rentals")
 }
 
@@ -51,16 +54,18 @@ model Game {
   resume  String
   release Int
   user    GameRental[]
+
   @@map("games")
 }
 
 model GameRental {
+  id         Int      @id @default(autoincrement())
   game       Game     @relation(fields: [gameId], references: [id])
   gameId     Int
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   rentalDate DateTime @default(now())
   returnDate DateTime
-  @@id([gameId, userId])
+
   @@map("game_rentals")
 }
