@@ -9,7 +9,7 @@ const findUser = async (email: string, password: string) => {
 
   if (wrongPassword) return { found: false, message: 'Senha incorreta' }
 
-  return { found: true, message:  user.name }
+  return { found: true, message:  { id: user.id, name: user.name } }
 }
 
 export default {
