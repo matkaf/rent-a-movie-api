@@ -12,7 +12,7 @@ const findUser = async (req: Request, res: Response) => {
 
   if (!found) return res.status(StatusCodes.BAD_REQUEST).json({ message })
 
-  return res.status(StatusCodes.OK).json({ message })
+  return res.status(StatusCodes.OK).json(message)
 }
 
 export default {
