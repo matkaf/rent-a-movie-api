@@ -11,6 +11,8 @@ import User from './controllers/User';
 
 const origin = ['http://localhost:3000']
 
+const PORT = process.env.PORT || 3001;
+
 const options: cors.CorsOptions = {
   origin,
 }
@@ -20,8 +22,6 @@ const app = express();
 app.use(cors(options));
 
 app.use(express.json());
-
-const port = 3001;
 
 app.get('/', (_req, res) => {
   res.status(StatusCodes.OK).send('API funcionando!')
@@ -37,6 +37,6 @@ app.get('/games', Game.getAllGames)
 
 app.post('/games', GameRental.createGameRental)
 
-app.listen(process.env.PORT || port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
 });

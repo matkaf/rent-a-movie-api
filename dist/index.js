@@ -18,7 +18,7 @@ const options = {
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)(options));
 app.use(express_1.default.json());
-const PORT = 3001;
+const port = 3001;
 app.get('/', (_req, res) => {
     res.status(http_status_codes_1.StatusCodes.OK).send('API funcionando!');
 });
@@ -27,6 +27,6 @@ app.get('/movies', Movie_1.default.getAllMovies);
 app.post('/movies', MovieRental_1.default.createMovieRental);
 app.get('/games', Game_1.default.getAllGames);
 app.post('/games', GameRental_1.default.createGameRental);
-app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(process.env.PORT || port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
 });
