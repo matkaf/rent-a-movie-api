@@ -23,7 +23,7 @@ npm install
 
 <details>
 
-<summary>Clique para revelar</summary>
+<summary>:warning: Clique para revelar</summary>
 
 ```env
 DATABASE_URL=postgresql://postgres:DrD8VBVhmFyRiOSx@db.amisweaifsfsjfadqxns.supabase.co:5432/postgres
