@@ -5,6 +5,8 @@ import GameRental from "../services/GameRental";
 const createGameRental = async (req: Request, res: Response) => {
   const { games } = req.body
 
+  if (!games) return res.status(StatusCodes.BAD_REQUEST)
+
   const rental = await GameRental.createGameRental(games)
 
   if (!rental.created) return res.status(StatusCodes.BAD_REQUEST)

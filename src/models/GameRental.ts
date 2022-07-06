@@ -26,7 +26,7 @@ const createGameRental = async (games: IGame[]) => {
   const data = validateData(games)
   
   try {
-    const res = await prisma.gameRental.createMany({ data })
+    const res = await prisma.gameRental.createMany({ data, skipDuplicates: true})
 
     return { created: true, message: res }
     

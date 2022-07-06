@@ -26,7 +26,7 @@ const createMovieRental = async (movies: IMovie[]) => {
   const data = validateData(movies)
   
   try {
-    const res = await prisma.movieRental.createMany({ data })
+    const res = await prisma.movieRental.createMany({ data, skipDuplicates: true })
 
     return { created: true, message: res }
     
