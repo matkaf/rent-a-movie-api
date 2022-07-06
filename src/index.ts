@@ -21,7 +21,7 @@ app.use(cors(options));
 
 app.use(express.json());
 
-const PORT = 3001;
+const port = 3001;
 
 app.get('/', (_req, res) => {
   res.status(StatusCodes.OK).send('API funcionando!')
@@ -37,6 +37,6 @@ app.get('/games', Game.getAllGames)
 
 app.post('/games', GameRental.createGameRental)
 
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
