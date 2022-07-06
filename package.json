@@ -8,7 +8,7 @@
     "start": "npm run build && node ./dist/index.js",
     "dev": "tsnd ./src/index.ts",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
