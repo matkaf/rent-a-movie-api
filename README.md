@@ -38,7 +38,7 @@ npm run dev
 
 # Documentação da API
 
-#### Verifica se existe usuário e senha
+### Verifica se existe usuário e senha
 
 ```http
   POST /login
@@ -49,13 +49,13 @@ npm run dev
 | `email` | `string` | **Obrigatório**.
 | `password` | `string` | **Obrigatória**.
 
-#### Retorna todos os filmes
+### Retorna todos os filmes
 
 ```http
   GET /movies
 ```
 
-#### Insere alugueis de filmes de determinado usuário
+### Insere alugueis de filmes de determinado usuário
 
 ```http
   POST /movies
@@ -68,12 +68,13 @@ npm run dev
 | `userId` | `string` | **Obrigatório**.
 | `returnDate` | `date` | **Obrigatória** mas gerado pelo model
 
-
-#### Retorna todos os jogos
+### Retorna todos os jogos
 
 ```http
   GET /games
 ```
+
+### Insere alugueis de jogos de determinado usuário
 
 ```http
   POST /games
@@ -85,7 +86,6 @@ npm run dev
 | `gameId` | `string` | **Obrigatório**.
 | `userId` | `string` | **Obrigatório**.
 | `returnDate` | `date` | **Obrigatória** mas gerado pelo model
-
 
 # Tecnologias utilizadas
 
