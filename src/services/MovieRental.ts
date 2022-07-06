@@ -1,7 +1,8 @@
+import { IMovie } from "../interfaces";
 import MovieRental from "../models/MovieRental";
 
-const createMovieRental = async (movieId: number, userId: number) => {
-  const rental = await MovieRental.createMovieRental(movieId, userId)
+const createMovieRental = async (movies: IMovie[]) => {
+  const rental = await MovieRental.createMovieRental(movies)
 
   return rental
 }

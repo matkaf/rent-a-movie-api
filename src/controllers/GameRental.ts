@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import MovieRental from "../services/MovieRental";
+import GameRental from "../services/GameRental";
 
-const createMovieRental = async (req: Request, res: Response) => {
-  const { movies } = req.body
+const createGameRental = async (req: Request, res: Response) => {
+  const { games } = req.body
 
-  const rental = await MovieRental.createMovieRental(movies)
+  const rental = await GameRental.createGameRental(games)
 
   if (!rental.created) return res.status(StatusCodes.BAD_REQUEST)
 
@@ -13,5 +13,5 @@ const createMovieRental = async (req: Request, res: Response) => {
 }
 
 export default {
-  createMovieRental,
+  createGameRental,
 }

@@ -38,7 +38,7 @@ model Movie {
 model MovieRental {
   id         Int      @id @default(autoincrement())
   movie      Movie    @relation(fields: [movieId], references: [id])
-  movieId    Int
+  movieId    Int  @unique
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   rentalDate DateTime @default(now()) @db.Date
@@ -61,7 +61,7 @@ model Game {
 model GameRental {
   id         Int      @id @default(autoincrement())
   game       Game     @relation(fields: [gameId], references: [id])
-  gameId     Int
+  gameId     Int  @unique
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   rentalDate DateTime @default(now())

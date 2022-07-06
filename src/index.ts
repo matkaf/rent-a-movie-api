@@ -4,6 +4,7 @@ import cors from 'cors';
 import { StatusCodes } from 'http-status-codes';
 
 import Game from './controllers/Game';
+import GameRental from './controllers/GameRental';
 import Movie from './controllers/Movie';
 import MovieRental from './controllers/MovieRental';
 import User from './controllers/User';
@@ -33,6 +34,8 @@ app.get('/movies', Movie.getAllMovies)
 app.post('/movies', MovieRental.createMovieRental)
 
 app.get('/games', Game.getAllGames)
+
+app.post('/games', GameRental.createGameRental)
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);

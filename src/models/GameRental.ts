@@ -1,7 +1,7 @@
 import prisma from "../database/prismaClient";
 import { DateTime } from "luxon";
 
-import { IMovie } from '../interfaces'
+import { IGame } from '../interfaces'
 
 const setReturnDate = () => {
   let date = DateTime.now()
@@ -14,19 +14,19 @@ const setReturnDate = () => {
   return date.plus({ days: 2 }).toJSDate()
 }
 
-const validateData = (movies: IMovie[]) => {
-  const data = movies.map((movie) => {
-    return { ...movie, returnDate: setReturnDate() }
+const validateData = (games: IGame[]) => {
+  const data = games.map((game) => {
+    return { ...game, returnDate: setReturnDate() }
   })
 
   return data
 }
 
-const createMovieRental = async (movies: IMovie[]) => {
-  const data = validateData(movies)
+const createGameRental = async (games: IGame[]) => {
+  const data = validateData(games)
   
   try {
-    const res = await prisma.movieRental.createMany({ data })
+    const res = await prisma.gameRental.createMany({ data })
 
     return { created: true, message: res }
     
@@ -37,5 +37,5 @@ const createMovieRental = async (movies: IMovie[]) => {
 }
 
 export default {
-  createMovieRental,
+  createGameRental,
 }
