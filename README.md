@@ -4,7 +4,12 @@ API para gerencimento de uma locadora de filmes. A aplicação foi desenvolvida 
 
 ## :rocket: Como rodar o projeto?
 
-### :warning: O projeto depende do banco de dados online para rodar (Supabase). 
+### :warning: O projeto depende do banco de dados online para rodar (Supabase).
+
+Você pode fazer requisições a API nesse link:
+
+ `/movies` - 
+ https://rent-a-movie-api.herokuapp.com/movies
 
 Para rodar o projeto, você deve clonar este repositório e o repositório [front-end](https://github.com/matkaf/rent-a-movie-front)
 
