@@ -26,16 +26,6 @@ npm install
 
 3. O projeto precisa da URL do banco de dados. Copie abaixo e adicionei um arquivo `.env` na raiz do projeto:
 
-<details>
-
-<summary>:warning: Clique para revelar</summary>
-
-```env
-DATABASE_URL=postgresql://postgres:DrD8VBVhmFyRiOSx@db.amisweaifsfsjfadqxns.supabase.co:5432/postgres
-```
-
-</details>
-
 4. Inicie a aplicação:
 ```bash
 npm run dev
