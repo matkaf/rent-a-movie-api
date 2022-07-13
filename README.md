@@ -24,9 +24,7 @@ cd rent-a-movie-api
 npm install
 ```
 
-3. O projeto precisa da URL do banco de dados. Copie abaixo e adicionei um arquivo `.env` na raiz do projeto:
-
-4. Inicie a aplicação:
+3. Inicie a aplicação:
 ```bash
 npm run dev
 ```
